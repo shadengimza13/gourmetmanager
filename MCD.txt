@@ -1,0 +1,33 @@
+MCD - GourmetManager
+
+CATEGORIE
+- identifiant_categorie : clé primaire
+- nom
+
+RECETTE
+- identifiant_recette : clé primaire
+- titre
+- description
+- identifiant_categorie : clé étrangère
+
+INGREDIENT
+- identifiant_ingredient : clé primaire
+- nom
+
+RECETTE_INGREDIENT
+- identifiant_recette : clé primaire et clé étrangère
+- identifiant_ingredient : clé primaire et clé étrangère
+- quantite
+
+
+Relations :
+
+Une catégorie peut contenir zéro à plusieurs recettes.
+
+Une recette appartient à une seule catégorie.
+
+Une recette possède un ou plusieurs ingrédients.
+
+Un ingrédient peut être utilisé dans plusieurs recettes.
+
+RECETTE_INGREDIENT est la table de liaison entre RECETTE et INGREDIENT.
