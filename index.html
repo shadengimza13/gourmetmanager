@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="GourmetManager - Gestion simple de recettes">
+
+    <title>GourmetManager - Recettes</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="container nav">
+
+        <a href="#" class="logo">
+            Gourmet<span>Manager</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">
+            ☰
+        </button>
+
+        <nav id="nav">
+
+            <a href="#recettes">Recettes</a>
+
+            <a href="#ajouter">
+                Ajouter une recette
+            </a>
+
+            <a href="#a-propos">
+                À propos
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- Présentation -->
+
+    <section class="hero">
+
+        <div class="container hero-inner">
+
+            <p class="arabic">
+                مطبخك، وصفاتك
+            </p>
+
+            <p class="small-title">
+                Gérer • créer • partager
+            </p>
+
+            <h1>
+                Les recettes du chef,
+                <span>au même endroit.</span>
+            </h1>
+
+            <p>
+                Une interface simple pour retrouver,
+                consulter et ajouter des recettes facilement.
+            </p>
+
+            <a href="#recettes" class="button primary">
+                Voir les recettes
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Liste des recettes -->
+
+    <section class="section" id="recettes">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="small-title">
+                    La bibliothèque
+                </p>
+
+                <h2>
+                    Mes recettes
+                </h2>
+
+                <p>
+                    Cliquez sur le titre d'une recette
+                    pour afficher ou masquer son détail.
+                </p>
+
+            </div>
+
+            <div id="recipeList" class="recipe-list"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Formulaire -->
+
+    <section class="section beige" id="ajouter">
+
+        <div class="container form-wrapper">
+
+            <div class="section-heading">
+
+                <p class="small-title">
+                    Nouvelle création
+                </p>
+
+                <h2>
+                    Ajouter une recette
+                </h2>
+
+                <p>
+                    Quelques informations suffisent pour
+                    enregistrer une nouvelle recette.
+                </p>
+
+            </div>
+
+
+            <form id="recipeForm" class="recipe-form">
+
+                <div class="field">
+
+                    <label for="title">
+                        Titre
+                    </label>
+
+                    <input
+                        id="title"
+                        name="title"
+                        type="text"
+                        placeholder="Ex. Couscous aux légumes"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="4"
+                        placeholder="Présentez rapidement la recette..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Ingrédients
+                    </label>
+
+                    <div
+                        id="ingredients"
+                        class="ingredients"
+                    ></div>
+
+                    <button
+                        type="button"
+                        id="addIngredient"
+                        class="button secondary"
+                    >
+                        + Ajouter un ingrédient
+                    </button>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="category">
+                        Catégorie
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Choisir une catégorie
+                        </option>
+
+                        <option value="Entrée">
+                            Entrée
+                        </option>
+
+                        <option value="Plat">
+                            Plat
+                        </option>
+
+                        <option value="Dessert">
+                            Dessert
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button primary"
+                >
+                    Ajouter la recette
+                </button>
+
+
+                <p
+                    id="formMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- À propos -->
+
+    <section
+        class="section"
+        id="a-propos"
+    >
+
+        <div class="container about">
+
+            <div>
+
+                <p class="small-title">
+                    GourmetManager
+                </p>
+
+                <h2>
+                    Simple, clair et pensé pour le chef.
+                </h2>
+
+                <p>
+                    Le prototype permet de gérer une petite
+                    bibliothèque de recettes et de consulter
+                    rapidement leur contenu.
+                </p>
+
+            </div>
+
+
+            <div class="decorative-card">
+
+                <p class="arabic large">
+                    شهية طيبة
+                </p>
+
+                <p>
+                    Bon appétit.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+
+            <strong>
+                GourmetManager
+            </strong>
+
+            <br>
+
+            <span>
+                Prototype statique responsive
+            </span>
+
+        </div>
+
+        <div>
+            © 2026 GourmetManager
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- JavaScript MVC -->
+
+<script src="Model/RecipeModel.js"></script>
+
+<script src="View/RecipeView.js"></script>
+
+<script src="Controller/RecipeController.js"></script>
+
+</body>
+
+</html>
